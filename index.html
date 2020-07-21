@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Typing Test</title>
+    <style>
+      body{
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 3%, rgba(104,196,227,1) 98%, rgba(104,196,227,1) 100%);
+      }
+      .main{
+        margin: 53px auto;
+        height:500px;
+        width: 900px;
+        background-color:transparent;
+       
+      }
+      .left{
+        width: 33%;
+        height: 500px;
+        background-color:#340F6E;
+        float: left;
+      }
+      .right{
+        width:65%;
+        height: 500px;
+        background-color: white;
+        float: right;
+      }
+      .app-title{
+        
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        color:white;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .score-container{
+        margin: 50px auto;
+        height: 240px;
+        width: 240px;
+        background-color: transparent;
+        border-color:  rgba(255, 255, 255,0.8);
+        border-width: 5px;
+        border-style: dotted;
+        border-radius: 130%;
+      }
+      #score{
+        padding: 78px;
+        text-align: center;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-weight: 50px;
+      }
+      .menu-left{
+        height:500px;
+        width: 5%;
+        background-color: white;
+        margin-left: -18px;
+        float: left;
+      }
+      .text-right{
+         height:500px;
+        width: 93%;
+        background-color:white;
+        float: right;
+
+      }
+      .text-container{
+        margin-top: 30px;
+        height: 180px;
+        width: 450px;
+        border-style: solid;
+        border-width: 4px;
+        border-radius: 30px;
+        background-color:transparent;
+        border-color: #340F6E;
+        padding:0px 10px 0px 10px;
+      }
+      .text-1{
+        font-size: 26px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        display: inline;
+      }
+      .typing-area-container{
+        margin-top: 20px;
+        margin-left: 5px;
+      }
+      #typing-area{
+        height: 40px;
+        width: 450px;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        outline: none;
+        color:#340F6E;
+        padding: 2px 0px 2px 15px;
+        border-style: solid;
+        border-radius: 20px;
+        color:#340F6E;
+
+      }
+      .far,.fas{
+        color:white;
+        font-weight: 180px!important;
+      }
+      .fa-tachometer-alt{
+        position: absolute;
+        top:176px;
+        left: 320px;
+        font-size: 40px;
+      }
+      .fa-mouse{
+        position: absolute;
+        top:290px;
+        left: 440px;
+        font-size: 50px;
+
+      }
+      .fa-keyboard{
+        position: absolute;
+        top:290px;
+        left: 200px;
+        font-size: 40px;
+      }
+      .fa-laptop-code{
+        position: absolute;
+        top:415px;
+        left: 320px;
+        font-size: 40px;
+      }
+      .typing-menu{
+        height: 50%;
+        background-color:rgba(52, 15, 110);
+      }
+      .fa-chalkboard-teacher{
+        margin-left: 10px;
+        margin-top: 100px;
+        color:white;
+        font-size: 40px;
+
+      }
+      .score-menu{
+        height: 50%;   
+        background-color:rgba(52, 15, 110,0.9);
+      }
+      .fa-poll{
+        margin-left: 25px;
+        margin-top: 100px;
+        color:white;
+        font-size: 40px;
+
+      }
+      .typed{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        margin-left: 100px;
+        color:#340F6E;
+        font-size: 25px;
+      }
+      #correct{
+        background-color: greenyellow;
+        padding: 3px;
+      }
+      #wrong{
+        background-color: red;
+        padding: 3px;
+      }
+      #cWord{
+        background-color: yellow;
+        border-style: none;
+        border-radius: 6px;
+      }
+      .speed{
+        margin-top: 60px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        color: #340F6E;
+      }
+      #wpm{
+        margin-top: -50px;
+        margin-left: 220px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 50px;
+        background-color:#340F6E;
+        height: 150px;
+        width: 150px;
+        border-style: none;
+        border-radius: 20px;
+        color:white;
+        
+      }
+      #wp{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 13px;
+        color:white;
+        text-align: center;
+        margin-top: -40px;
+      }
+      #and{
+        margin-top: 30px;
+        text-align:center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        color: #340F6E;
+        
+      }
+      #acc{
+        
+        margin-left: 170px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 22px;
+        color: #340F6E;
+        display: inline;
+      }
+      #accuracy{
+        margin-left: 10px;
+        display: inline;
+        background-color: red;
+        padding: 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        border-radius: 10px;
+        color: white;
+
+      }
+      .code{
+        position: absolute;
+        top: 500px;
+        left: 250px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-align: center;
+        font-size: 20px;
+        color: rgba(255, 255, 255,0.6);
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <div>
+          <h1 class="app-title">Typing Test</h1>
+        </div>
+        <div class="icon-speed">
+         
+        </div>
+        <div class="icon-recycle">
+          
+
+        </div>
+        <div class="score-container">
+          <i class="fas fa-mouse"></i>
+          <i class="fas fa-tachometer-alt"></i>
+          <h1 id="score">Start!</h1>
+          <i class="far fa-keyboard"></i>
+           <i class="fas fa-laptop-code"></i>
+        </div>
+         <h1 class="code">&copy; Code by Wasim</h1>
+      </div>
+      <div class="right">
+        
+        <div class="menu-left">
+
+        </div>
+    <div id="right" style="display: block;">
+        <div class="text-right">
+          <div class="text-container">
+            <p class="text-1" id="cWord"></p>
+            <p id="text-text" class="text-1"></p>
+          </div>
+          <div class="typing-area-container">
+            <input type="text" placeholder="Type here...." id="typing-area"/>
+          </div>
+          <div>
+            <h1 class="typed">Typed Words : <span id="tTyped">0</span></h1>
+            <h1 class="typed">Correct Words : <span id="correct">0</span></h1>
+            <h1 class="typed">Wrong Words : <span id="wrong">0</span></h1>
+
+          </div>
+         
+        </div>
+        </div>
+        <div class="res" id="result" style="display: none;">
+          <h1 class="speed">Your Typing Speed is</h1>
+          <div id="wpm">
+          <h1 class="" id="wordpm" >50</h1>
+          </div>
+          <p id="wp">wpm</p>
+          <h1 id="and">And</h1>
+          <h1 id="acc">Accuracy is</h1>
+          <h1 id="accuracy">20%</h1>
+        </div>
+        
+
+      </div>
+
+    </div>
+    <script>
+      var typeArea=document.getElementById('typing-area');
+      var timeArea=document.getElementById('score');
+      var textContainer=document.getElementById('text-text');
+      var resultCont=document.getElementById('result');
+      var wpm=document.getElementById('wordpm');
+      var accuracy=document.getElementById("accuracy");
+      var cont=document.getElementById('right');
+      var tWords=document.getElementById('tTyped');
+      var cWord=document.getElementById('cWord');
+      var correct=document.getElementById('correct');
+      var wrong=document.getElementById('wrong');
+      var correctWords=0;
+      var wrongWords=0;
+      var totalWords=0;
+      var currentWord=0;
+      var typingParagraph=[
+        "Studying is the main source of knowledge. Books are indeed never failing friends of man. For a mature mind, reading is the greatest source of pleasure and solace to distressed minds. The study of good books ennobles us and broadens our outlook. Therefore, the habit of reading should be cultivated. A student should never confine himself to his schoolbooks only. He should not miss the pleasure locked in the classics, poetry, drama, history, philosophy etc. We can derive benefit from other’s experiences with the help of books. The various sufferings, endurance and joy described in books enable us to have a closer look at human life. They also inspire us to face the hardships of life courageously. Nowadays there are innumerable books and time is scarce. So we should read only the best and the greatest among them. With the help of books we shall be able to make our thinking mature and our life more meaningful and worthwhile."];
+        
+      typeArea.onfocus=timer;
+      var time;
+      function timer(){
+        var seconds=59;
+        time=setInterval(function(){
+          timeArea.textContent=seconds;
+          if(seconds==0){
+              clearInterval(time); 
+              timeArea.textContent="Result!";
+              cont.style.display="none";
+              resultCont.style.display="block";
+              wpm.textContent=currentWord;
+              accuracy.textContent=calculateAccuracy(correctWords,currentWord);
+            
+          }
+          seconds--;
+        },1000)
+      }
+      console.log(typingParagraph[0].split(' ')[0]);
+      updateText(currentWord);
+      function updateText(start){
+        textContainer.textContent="";
+        cWord.textContent=typingParagraph[0].split(" ")[start];
+        for(var i=start+1;i<start+19;i++){
+            textContainer.textContent+=" "+typingParagraph[0].split(' ')[i];
+        }
+      }
+      typeArea.onkeyup=function(){
+        var typedWord=this.value;
+        var check=typedWord.split(' ').length;
+        if(check==2){
+          variefy(this.value);
+          this.placeholder="";
+          this.value="";
+        }
+      }
+      function variefy(val){
+        var val=val.trim();
+        if(val==typingParagraph[0].split(' ')[currentWord]){
+          console.log('write');
+          currentWord++;
+          correctWords++;
+          correct.textContent=correctWords;
+          wrong.textContent=wrongWords;
+          tWords.textContent=currentWord;
+          updateText(currentWord);
+        }
+        else{
+          currentWord++;
+          wrongWords++;
+          correct.textContent=correctWords;
+          wrong.textContent=wrongWords;
+          tWords.textContent=currentWord;
+          updateText(currentWord);
+        }
+      }
+      function calculateAccuracy(c,d){
+        var acc=(c/d);
+        acc=Math.ceil((acc*100))+"%";
+        return acc;
+      }
+    </script>
+  </body>
+</html>
